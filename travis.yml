@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - '6.9.1'
+before_script:
+  - 'npm install -g bower karma grunt-cli jshint'
+  - 'npm install'
+  - 'bower install'
+
+after_script:
+  - 'gulp test'
