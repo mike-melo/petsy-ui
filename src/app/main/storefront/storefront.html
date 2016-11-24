@@ -1,10 +1,18 @@
-<div uib-dropdown>
-    <button class="btn btn-default" type="button" uib-dropdown-toggle
-            aria-haspopup="true" aria-expanded="true">
-        {{storefront.kindOfPetSelected}}
-        <span class="caret"></span>
-    </button>
-    <ul uib-dropdown-menu aria-labelledby="kindOfPet">
-        <li ng-repeat="kindOfPet in storefront.kindsofPets"><a ng-click="storefront.chooseKindOfPet(kindOfPet)">{{kindOfPet}}</a></li>
-    </ul>
-</div>
+<form ng-submit="storefront.addAPet()">
+    <div class="input-group">
+        <div uib-dropdown>
+            <button class="btn btn-default" type="button" uib-dropdown-toggle
+                    aria-haspopup="true" aria-expanded="true">
+                {{storefront.pet.kind}}
+                <span class="caret"></span>
+            </button>
+            <ul uib-dropdown-menu aria-labelledby="kindOfPet">
+                <li ng-repeat="kindOfPet in storefront.kindsofPets"><a ng-click="storefront.chooseKindOfPet(kindOfPet)">{{kindOfPet}}</a></li>
+            </ul>
+        </div>
+        <input type="text" ng-model="storefront.pet.name" class="form-control" placeholder="What's its name?" aria-describedby="basic-addon1">
+        <button type="submit" class="btn btn-success btn-circle">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+    </div>
+</form>

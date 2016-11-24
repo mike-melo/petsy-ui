@@ -6,13 +6,19 @@
     .controller('StorefrontController', StorefrontController);
 
   /** @ngInject */
-  function StorefrontController() {
+  function StorefrontController($log) {
     var vm = this;
-    vm.kindOfPetSelected = 'Kind of pet?';
+
+    vm.pet = {};
+    vm.pet.kind = 'What kind of pet?';
     vm.kindsofPets = ['Cat', 'Dog', 'Fish', 'Hamster'];
 
     vm.chooseKindOfPet = function(kindOfPetChosen) {
-      vm.kindOfPetSelected = kindOfPetChosen;
-    }
+      vm.pet.kind = kindOfPetChosen;
+    };
+
+    vm.addAPet = function() {
+      $log.info('You are adding ', vm.pet);
+    };
   }
 })();
