@@ -10,6 +10,7 @@
     var vm = this;
 
     vm.pet = {};
+    vm.pets = [];
     vm.pet.kind = 'What kind of pet?';
     vm.kindsofPets = ['Cat', 'Dog', 'Fish', 'Hamster'];
 
@@ -18,7 +19,7 @@
     };
 
     vm.addAPet = function() {
-      $log.info('You are adding ', vm.pet);
+      vm.pets.push(vm.pet);
     };
   }
 })();
