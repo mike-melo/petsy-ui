@@ -1,0 +1,10 @@
+<div uib-dropdown>
+    <button class="btn btn-default" type="button" uib-dropdown-toggle
+            aria-haspopup="true" aria-expanded="true">
+        {{storefront.kindOfPetSelected}}
+        <span class="caret"></span>
+    </button>
+    <ul uib-dropdown-menu aria-labelledby="kindOfPet">
+        <li ng-repeat="kindOfPet in storefront.kindsofPets"><a ng-click="storefront.chooseKindOfPet(kindOfPet)">{{kindOfPet}}</a></li>
+    </ul>
+</div>
