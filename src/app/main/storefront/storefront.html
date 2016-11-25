@@ -1,7 +1,7 @@
 <div class="container">
-    <form ng-submit="storefront.addAPet()">
-        <div class="input-group">
-            <div uib-dropdown>
+    <section name="pet-interaction">
+        <form ng-submit="storefront.addAPet()" class="form-inline">
+            <div uib-dropdown class="side-by-side">
                 <button class="btn btn-default" type="button" uib-dropdown-toggle
                         aria-haspopup="true" aria-expanded="true">
                     {{storefront.pet.kind}}
@@ -17,18 +17,19 @@
             <button type="submit" class="btn btn-success btn-circle">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-        </div>
-    </form>
-
-    <div class="row">
-        <div ng-repeat="pet in storefront.pets track by $index" class="col-md-3">
-            <div class="thumbnail">
-                <img src="/assets/images/dogs/dog1.jpg"
-                     alt="{{pet.name}}, {{pet.kind}}"/>
-                <div class="caption">
-                    <h4>{{pet.name}}, {{pet.kind}}</h4>
+        </form>
+    </section>
+    <section name="pets" class="buffer-top">
+        <div class="row">
+            <div ng-repeat="pet in storefront.pets" class="col-md-3 fade">
+                <div class="thumbnail">
+                    <img src="/assets/images/dogs/dog1.jpg"
+                         alt="{{pet.description}}"/>
+                    <div class="caption">
+                        <h4>{{pet.description}}</h4>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>

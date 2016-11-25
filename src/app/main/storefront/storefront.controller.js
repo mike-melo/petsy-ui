@@ -6,7 +6,7 @@
     .controller('StorefrontController', StorefrontController);
 
   /** @ngInject */
-  function StorefrontController($log) {
+  function StorefrontController($log, $timeout) {
     var vm = this;
 
     vm.pet = {};
@@ -19,7 +19,9 @@
     };
 
     vm.addAPet = function() {
-      vm.pets.push(vm.pet);
+      var newPet = Object.assign({}, vm.pet);
+      newPet.description = newPet.name + ', ' + newPet.kind;
+      vm.pets.push(newPet);
     };
   }
 })();

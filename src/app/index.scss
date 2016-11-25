@@ -31,6 +31,30 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
   height: 200px;
 }
 
+.buffer-top {
+  margin-top: 1em;
+}
+
+.side-by-side {
+  display: inline-block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  opacity: 1;
+}
+
+.fade.ng-enter {
+  animation: 1s appear;
+}
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
