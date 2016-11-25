@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container buffer-top">
     <section name="pet-interaction">
         <form ng-submit="storefront.addAPet()" class="form-inline">
             <div uib-dropdown class="side-by-side">
@@ -12,10 +12,9 @@
                             ng-click="storefront.chooseKindOfPet(kindOfPet)">{{kindOfPet}}</a></li>
                 </ul>
             </div>
-            <input type="text" ng-model="storefront.pet.name" class="form-control" placeholder="What's its name?"
-                   aria-describedby="basic-addon1">
-            <button type="submit" class="btn btn-success btn-circle">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            <input type="text" ng-model="storefront.pet.name" class="form-control" placeholder="What's its name?">
+            <button type="submit" class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span>
             </button>
         </form>
     </section>
@@ -27,6 +26,11 @@
                          alt="{{pet.description}}"/>
                     <div class="caption">
                         <h4>{{pet.description}}</h4>
+                    </div>
+                    <div class="button-bar">
+                        <button type="button" class="btn">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
                     </div>
                 </div>
             </div>
