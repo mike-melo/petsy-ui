@@ -12,7 +12,12 @@
         url: '/',
         templateUrl: 'app/main/storefront/storefront.html',
         controller: 'StorefrontController',
-        controllerAs: 'storefront'
+        controllerAs: 'storefront',
+        resolve: {
+          pets: function(petsService) {
+            return petsService.getAllPets();
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');

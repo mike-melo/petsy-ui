@@ -6,12 +6,10 @@
     .controller('StorefrontController', StorefrontController);
 
   /** @ngInject */
-  function StorefrontController(petsService, $log) {
+  function StorefrontController(petsService, pets) {
     var vm = this;
 
-    petsService.getAllPets().then(function(pets){
-      vm.pets = pets;
-    });
+    vm.pets = pets;
 
     vm.pet = {};
     vm.pet.kind = 'What kind of pet?';
@@ -22,10 +20,9 @@
     };
 
     vm.addAPet = function() {
-      var newPet = Object.assign({}, vm.pet);
-      newPet.description = newPet.name + ', ' + newPet.kind;
-      petsService.addPet(newPet);
-      vm.pets.push(newPet);
+      petsService.addPet(vm.pet).then(function(addedPet){
+        vm.pets.push(addedPet);
+      });
     };
   }
 })();

@@ -6,6 +6,5 @@
     .module('petsyUi')
     .constant('malarkey', malarkey)
     .constant('moment', moment)
-    .constant('_', window._)
 
 })();

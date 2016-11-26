@@ -20,12 +20,7 @@
     function getAllPets() {
       return petsApi.getAllPets().then(function (pets) {
         return pets.map(function (pet) {
-          var storefrontPet = {
-            name: pet.name,
-            kind: pet.category.name,
-            description: pet.name + ', ' + pet.category.name
-          };
-          return storefrontPet;
+          return transformPet(pet);
         });
       });
     }
@@ -39,11 +34,22 @@
         name: pet.name,
         category: {name: pet.kind},
         status: 'available'
+      }).then(function(addedPet){
+        return transformPet(addedPet);
       });
     }
 
     function getPet(pet) {
 
+    }
+
+    function transformPet(pet) {
+      return {
+        id: pet.id,
+        name: pet.name,
+        kind: pet.category.name,
+        description: pet.name + ', ' + pet.category.name
+      };
     }
   }
 })();

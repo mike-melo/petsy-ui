@@ -29,7 +29,9 @@
     }
 
     function addPet(pet) {
-      return $http.post(urlBase, pet);
+      return $http.post(urlBase, pet).then(function(response){
+        return response.data;
+      });
     }
 
     function getPet(pet) {
