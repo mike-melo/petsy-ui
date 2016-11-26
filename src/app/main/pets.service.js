@@ -26,7 +26,7 @@
     }
 
     function removePet(pet) {
-
+      return petsApi.removePet(pet.href);
     }
 
     function addPet(pet) {
@@ -39,13 +39,13 @@
       });
     }
 
-    function getPet(pet) {
+    function getPet() {
 
     }
 
     function transformPet(pet) {
       return {
-        id: pet.id,
+        href: pet.href,
         name: pet.name,
         kind: pet.category.name,
         description: pet.name + ', ' + pet.category.name

@@ -20,17 +20,23 @@
 
     function getAllPets() {
       return $http.get(urlBase).then(function(response){
-        return response.data._embedded.pets;
+        var pets = response.data._embedded.pets;
+        pets.forEach(function(pet) {
+          pet.href = pet._links.pet.href.replace('http://localhost:8080', '');
+        });
+        return pets;
       });
     }
 
-    function removePet(pet) {
-      return $http.delete(urlBase + '/' + pet.id);
+    function removePet(petHref) {
+      return $http.delete(petHref);
     }
 
     function addPet(pet) {
       return $http.post(urlBase, pet).then(function(response){
-        return response.data;
+        var pet = response.data;
+        pet.href = pet._links.pet.href.replace('http://localhost:8080', '');
+        return pet;
       });
     }
 

@@ -24,5 +24,14 @@
         vm.pets.push(addedPet);
       });
     };
+
+    vm.removePet = function(pet) {
+      petsService.removePet(pet).then(function(){
+        var index = vm.pets.indexOf(pet);
+        if(index > -1) {
+          vm.pets.splice(index, 1);
+        }
+      });
+    };
   }
 })();
