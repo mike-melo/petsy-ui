@@ -43,7 +43,8 @@
         href: pet.href,
         name: pet.name,
         kind: pet.category.name,
-        description: pet.name + ', ' + pet.category.name
+        description: pet.name + ', ' + pet.category.name,
+        status: pet.status
       };
     }
   }
