@@ -52,12 +52,38 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
   }
 }
 
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear-then-reappear {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 .fade {
   opacity: 1;
 }
 
 .fade.ng-enter {
   animation: 1s appear;
+}
+
+.fade.ng-leave {
+  animation: 1s disappear;
 }
 
 /**
