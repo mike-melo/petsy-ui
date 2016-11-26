@@ -2,8 +2,7 @@
     <section name="pet-interaction">
         <form ng-submit="storefront.addAPet()" class="form-inline">
             <div uib-dropdown class="side-by-side">
-                <button class="btn btn-default" type="button" uib-dropdown-toggle
-                        aria-haspopup="true" aria-expanded="true">
+                <button class="btn btn-default" type="button" uib-dropdown-toggle>
                     {{storefront.pet.kind}}
                     <span class="caret"></span>
                 </button>
@@ -12,7 +11,7 @@
                             ng-click="storefront.chooseKindOfPet(kindOfPet)">{{kindOfPet}}</a></li>
                 </ul>
             </div>
-            <input type="text" ng-model="storefront.pet.name" class="form-control" placeholder="What's its name?">
+            <input type="text" ng-model="storefront.pet.name" class="form-control" placeholder="What's its name?" required>
             <button type="submit" class="btn btn-success">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>

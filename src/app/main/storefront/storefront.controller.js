@@ -12,7 +12,7 @@
     vm.pets = pets;
 
     vm.pet = {};
-    vm.pet.kind = 'What kind of pet?';
+    vm.pet.kind = 'Dog';
     vm.kindsofPets = ['Cat', 'Dog', 'Fish', 'Hamster'];
 
     vm.chooseKindOfPet = function(kindOfPetChosen) {
