@@ -1,4 +1,4 @@
-(function() {
+  (function() {
   'use strict';
 
   angular
@@ -6,8 +6,8 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
-
+  function runBlock($rootScope, $log, $window) {
+    $rootScope._ = $window._;
     $log.debug('runBlock end');
   }
 
