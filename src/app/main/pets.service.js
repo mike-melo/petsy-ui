@@ -11,8 +11,7 @@
     var petsService = {
       getAllPets: getAllPets,
       removePet: removePet,
-      addPet: addPet,
-      getPet: getPet
+      addPet: addPet
     };
 
     return petsService;
@@ -37,10 +36,6 @@
       }).then(function(addedPet){
         return transformPet(addedPet);
       });
-    }
-
-    function getPet() {
-
     }
 
     function transformPet(pet) {

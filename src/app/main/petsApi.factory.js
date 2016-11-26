@@ -42,7 +42,9 @@
 
     function getPet(pet) {
       return $http.get(urlBase + '/' + pet.id).then(function(response){
-        return response;
+        var pet = response.data;
+        pet.href = pet._links.pet.href.replace('http://localhost:8080', '');
+        return pet;
       });
     }
   }
