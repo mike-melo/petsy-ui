@@ -86,14 +86,14 @@
         status: 'status'
       };
 
-      var petFromStore1 = {
+      var petFromStore = {
         href: 'href',
         name: 'name',
         category: {name: 'kind'},
         status: 'status'
       };
 
-      deferred.resolve(petFromStore1);
+      deferred.resolve(petFromStore);
 
       petStore.addPet(pet).then(function (transformedPet) {
         var pet = {
