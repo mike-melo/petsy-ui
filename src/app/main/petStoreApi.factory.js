@@ -3,20 +3,20 @@
 
   angular
     .module('petsyUi')
-    .factory('petsApi', petsApi);
+    .factory('petStoreApi', petStoreApi);
 
   /** @ngInject */
-  function petsApi($http) {
+  function petStoreApi($http) {
     var urlBase = '/pets';
 
-    var petsApi = {
+    var petStoreApi = {
       getAllPets : getAllPets,
       removePet : removePet,
       addPet : addPet,
       getPet : getPet
     };
 
-    return petsApi;
+    return petStoreApi;
 
     function getAllPets() {
       return $http.get(urlBase).then(function(response){

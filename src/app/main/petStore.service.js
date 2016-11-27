@@ -6,7 +6,7 @@
     .service('petStore', petStore);
 
   /** @ngInject */
-  function petStore(petsApi) {
+  function petStore(petStoreApi) {
 
     var petStore = {
       getAllPets: getAllPets,
@@ -17,7 +17,7 @@
     return petStore;
 
     function getAllPets() {
-      return petsApi.getAllPets().then(function (pets) {
+      return petStoreApi.getAllPets().then(function (pets) {
         return pets.map(function (pet) {
           return transformPet(pet);
         });
@@ -25,11 +25,11 @@
     }
 
     function removePet(pet) {
-      return petsApi.removePet(pet.href);
+      return petStoreApi.removePet(pet.href);
     }
 
     function addPet(pet) {
-      return petsApi.addPet({
+      return petStoreApi.addPet({
         name: pet.name,
         category: {name: pet.kind},
         status: 'available'
