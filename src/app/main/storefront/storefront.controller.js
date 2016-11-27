@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -15,20 +15,20 @@
     vm.pet.kind = 'Dog';
     vm.kindsofPets = ['Cat', 'Dog', 'Fish', 'Hamster'];
 
-    vm.chooseKindOfPet = function(kindOfPetChosen) {
+    vm.chooseKindOfPet = function (kindOfPetChosen) {
       vm.pet.kind = kindOfPetChosen;
     };
 
-    vm.addAPet = function() {
-      petsService.addPet(vm.pet).then(function(addedPet){
+    vm.addAPet = function () {
+      petsService.addPet(vm.pet).then(function (addedPet) {
         vm.pets.push(addedPet);
       });
     };
 
-    vm.removePet = function(pet) {
-      petsService.removePet(pet).then(function(){
+    vm.removePet = function (pet) {
+      petsService.removePet(pet).then(function () {
         var index = vm.pets.indexOf(pet);
-        if(index > -1) {
+        if (index > -1) {
           vm.pets.splice(index, 1);
         }
       });
