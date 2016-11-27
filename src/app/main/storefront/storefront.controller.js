@@ -6,7 +6,7 @@
     .controller('StorefrontController', StorefrontController);
 
   /** @ngInject */
-  function StorefrontController(petsService, pets) {
+  function StorefrontController(petStore, pets) {
     var vm = this;
 
     vm.pets = pets;
@@ -20,13 +20,13 @@
     };
 
     vm.addAPet = function () {
-      petsService.addPet(vm.pet).then(function (addedPet) {
+      petStore.addPet(vm.pet).then(function (addedPet) {
         vm.pets.push(addedPet);
       });
     };
 
     vm.removePet = function (pet) {
-      petsService.removePet(pet).then(function () {
+      petStore.removePet(pet).then(function () {
         var index = vm.pets.indexOf(pet);
         if (index > -1) {
           vm.pets.splice(index, 1);

@@ -14,8 +14,8 @@
         controller: 'StorefrontController',
         controllerAs: 'storefront',
         resolve: {
-          pets: function(petsService) {
-            return petsService.getAllPets();
+          pets: function(petStore) {
+            return petStore.getAllPets();
           }
         }
       });

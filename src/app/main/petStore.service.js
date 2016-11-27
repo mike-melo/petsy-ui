@@ -3,18 +3,18 @@
 
   angular
     .module('petsyUi')
-    .service('petsService', petsService);
+    .service('petStore', petStore);
 
   /** @ngInject */
-  function petsService(petsApi) {
+  function petStore(petsApi) {
 
-    var petsService = {
+    var petStore = {
       getAllPets: getAllPets,
       removePet: removePet,
       addPet: addPet
     };
 
-    return petsService;
+    return petStore;
 
     function getAllPets() {
       return petsApi.getAllPets().then(function (pets) {

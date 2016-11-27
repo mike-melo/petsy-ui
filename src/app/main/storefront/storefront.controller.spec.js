@@ -4,19 +4,19 @@
   describe('Storefront controller', function () {
     var vm;
     var pets;
-    var petsService;
+    var petStore;
     var $q;
     var $scope;
     var deferred;
 
     beforeEach(module('petsyUi'));
-    beforeEach(inject(function (_$controller_, _petsService_, _$rootScope_, _$q_) {
+    beforeEach(inject(function (_$controller_, _petStore_, _$rootScope_, _$q_) {
       pets = [];
-      petsService = _petsService_;
+      petStore = _petStore_;
       $q = _$q_;
       $scope = _$rootScope_.$new();
       deferred = $q.defer();
-      vm = _$controller_('StorefrontController', {petsService: petsService, pets: pets});
+      vm = _$controller_('StorefrontController', {petStore: petStore, pets: pets});
     }));
 
     it('should get all pets', function () {
@@ -38,7 +38,7 @@
     });
 
     it('should add a pet to the store and storefront display', function () {
-      spyOn(petsService, 'addPet').and.returnValue(deferred.promise);
+      spyOn(petStore, 'addPet').and.returnValue(deferred.promise);
       var addedPet = {name: 'Doggie'};
       deferred.resolve(addedPet);
 
@@ -49,7 +49,7 @@
     });
 
     it('should remove a pet from the store and storefront display', function () {
-      spyOn(petsService, 'removePet').and.returnValue(deferred.promise);
+      spyOn(petStore, 'removePet').and.returnValue(deferred.promise);
       var petToRemove = {name: 'Doggie'};
       vm.pets.push(petToRemove);
       deferred.resolve();
