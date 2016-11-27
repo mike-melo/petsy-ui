@@ -12,8 +12,7 @@
     var petStoreApi = {
       getAllPets : getAllPets,
       removePet : removePet,
-      addPet : addPet,
-      getPet : getPet
+      addPet : addPet
     };
 
     return petStoreApi;
@@ -34,14 +33,6 @@
 
     function addPet(pet) {
       return $http.post(urlBase, pet).then(function(response){
-        var pet = response.data;
-        pet.href = pet._links.pet.href.replace('http://localhost:8080', '');
-        return pet;
-      });
-    }
-
-    function getPet(pet) {
-      return $http.get(urlBase + '/' + pet.id).then(function(response){
         var pet = response.data;
         pet.href = pet._links.pet.href.replace('http://localhost:8080', '');
         return pet;
